@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class TravelCalculatePremiumServiceImplTest {
-
 
 
     public TravelCalculatePremiumRequest request() {
@@ -18,6 +18,7 @@ class TravelCalculatePremiumServiceImplTest {
         request.setPersonLastName("Dory");
         request.setAgreementDateFrom(new Date());
         request.setAgreementDateTo(new Date());
+
         return request;
     }
 
@@ -49,6 +50,9 @@ class TravelCalculatePremiumServiceImplTest {
         assertEquals(response().getAgreementDateTo(), request().getAgreementDateTo());
 
     }
-
+    @Test
+    public void shouldPopulateAgreementPrice() {
+        assertNotNull(response().getAgreementPrice());
+    }
 
 }
