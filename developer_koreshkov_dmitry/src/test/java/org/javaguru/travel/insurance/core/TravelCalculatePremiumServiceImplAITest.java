@@ -15,7 +15,8 @@ public class TravelCalculatePremiumServiceImplAITest {
 
     @BeforeEach
     void setUp() {
-        service = new TravelCalculatePremiumServiceImpl();
+        DateTimeService dateTimeService = new DateTimeService();
+        service = new TravelCalculatePremiumServiceImpl(dateTimeService);
     }
 
     @Test
